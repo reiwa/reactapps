@@ -1,7 +1,7 @@
 import React, { Fragment, FunctionComponent, useEffect, useState } from 'react'
 
 const App: FunctionComponent = () => {
-  const [answer, setAnswer] = useState(0)
+  const [answer] = useState(0)
 
   const [left, setLeft] = useState(0)
 
@@ -11,9 +11,9 @@ const App: FunctionComponent = () => {
 
   const reset = () => {
     const naturalNumbers = getNaturalNumbers(100)
-    const numbers = naturalNumbers.filter(n => 3 < getFactors(n).length)
+    const numbers = naturalNumbers.filter((n) => 3 < getFactors(n).length)
     const defaultLeft = getRandom(numbers)
-    const defaultFactors = getFactors(defaultLeft).filter(n => 2 < n)
+    const defaultFactors = getFactors(defaultLeft).filter((n) => 2 < n)
     const defaultFactor = getRandom(defaultFactors)
 
     setLeft(defaultLeft)
@@ -44,7 +44,7 @@ const App: FunctionComponent = () => {
         <span>{left * factor}</span>
       </div>
       <div>
-        {factors.map(factor => (
+        {factors.map((factor) => (
           <button key={factor} onClick={onClick(factor)}>
             {factor}
           </button>
@@ -58,7 +58,7 @@ const getFactors = (n: number) => {
   return new Array(n)
     .fill(null)
     .map((_, i) => i)
-    .filter(a => n % a === 0)
+    .filter((a) => n % a === 0)
 }
 
 const getRandom = (array: number[]) => {

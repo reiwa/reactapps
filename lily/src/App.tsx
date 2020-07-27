@@ -8,9 +8,11 @@ const App: FunctionComponent = () => {
     `Ç Ş ç ş`,
     `Ã Õ ã õ`,
   ]
-    .map(a => a.split(' '))
+    .map((a) => a.split(' '))
     .flat()
+
   const text = 'リリイ・シュシュのすべて'
+
   const [state, setState] = useState([0, 6])
 
   useEffect(() => {

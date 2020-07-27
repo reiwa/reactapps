@@ -1,9 +1,9 @@
 import React, {
+  ChangeEvent,
+  createRef,
   Fragment,
   FunctionComponent,
   useState,
-  createRef,
-  ChangeEvent,
 } from 'react'
 
 const App: FunctionComponent = () => {

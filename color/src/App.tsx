@@ -13,9 +13,9 @@ const App: FunctionComponent = () => {
       <h1 style={{ color: colorCode }}>{colorCode}</h1>
       <table>
         <tbody>
-          {createTable().map(row => (
+          {createTable().map((row) => (
             <tr key={row.join('')}>
-              {row.map(color => (
+              {row.map((color) => (
                 <th
                   onClick={() => setColors(color)}
                   key={color.join('')}
@@ -49,13 +49,13 @@ const createTable = () =>
   new Array(SQUARE)
     .fill(null)
     .map((_, i) => i)
-    .map(i =>
+    .map((i) =>
       new Array(SQUARE ** 2)
         .fill(null)
         .map((_, i) => i)
-        .filter(n => SQUARE * i - 1 < n)
-        .filter(n => n < SQUARE * (i + 1))
-        .map(_ => getRandomColorCode())
+        .filter((n) => SQUARE * i - 1 < n)
+        .filter((n) => n < SQUARE * (i + 1))
+        .map((_) => getRandomColorCode())
     )
 
 export default App

@@ -14,13 +14,13 @@ const App: FunctionComponent = () => {
     setText('')
   }
   const onClose = (text: string) => () => {
-    const index = items.findIndex(item => item.text === text)
+    const index = items.findIndex((item) => item.text === text)
     const _items = [...items]
     _items[index].isClosed = !_items[index].isClosed
     setItems(_items)
   }
   const onDelete = (text: string) => () => {
-    const index = items.findIndex(item => item.text === text)
+    const index = items.findIndex((item) => item.text === text)
     const _items = [...items]
     _items.splice(index, 1)
     setItems(_items)
@@ -29,9 +29,9 @@ const App: FunctionComponent = () => {
   return (
     <Fragment>
       <div>
-        <input onChange={event => setText(event.target.value)} value={text} />
+        <input onChange={(event) => setText(event.target.value)} value={text} />
         <button
-          disabled={!text || -1 < items.findIndex(item => item.text === text)}
+          disabled={!text || -1 < items.findIndex((item) => item.text === text)}
           onClick={onAdd}
         >
           add
@@ -43,8 +43,8 @@ const App: FunctionComponent = () => {
       </div>
       <ul>
         {items
-          .filter(item => isAll || !item.isClosed)
-          .map(item => (
+          .filter((item) => isAll || !item.isClosed)
+          .map((item) => (
             <li key={item.text}>
               <span>{item.isClosed ? <del>{item.text}</del> : item.text}</span>
               <button onClick={onClose(item.text)}>{'done'}</button>

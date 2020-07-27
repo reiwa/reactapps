@@ -10,7 +10,7 @@ const Text: FunctionComponent<Props> = ({ text }) => {
     `Ç Ş ç ş`,
     `Ã Õ ã õ`,
   ]
-    .map(a => a.split(' '))
+    .map((a) => a.split(' '))
     .flat()
   const [state, setState] = useState([0, 6])
 

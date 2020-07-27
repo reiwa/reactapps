@@ -6,11 +6,11 @@ const App: FunctionComponent = () => {
   const columns = new Array(4)
     .fill(null)
     .map((_, i) => i)
-    .map(i =>
-      allNumbers.filter(n => 16 * i - 1 < n).filter(n => n < 16 * (i + 1))
+    .map((i) =>
+      allNumbers.filter((n) => 16 * i - 1 < n).filter((n) => n < 16 * (i + 1))
     )
   const onClick = () => {
-    const remnants = allNumbers.filter(n => !closedNumbers.includes(n))
+    const remnants = allNumbers.filter((n) => !closedNumbers.includes(n))
     const nextNumber = remnants[Math.floor(Math.random() * remnants.length)]
     setClosedNumbers([...closedNumbers, nextNumber])
   }
@@ -26,9 +26,9 @@ const App: FunctionComponent = () => {
       </button>
       <table>
         <tbody>
-          {columns.map(row => (
+          {columns.map((row) => (
             <tr key={row.join('')}>
-              {row.map(number => (
+              {row.map((number) => (
                 <th
                   key={number}
                   style={{

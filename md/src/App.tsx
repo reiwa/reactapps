@@ -6,7 +6,10 @@ const App: FunctionComponent = () => {
 
   return (
     <Fragment>
-      <textarea onChange={event => setText(event.target.value)} value={text} />
+      <textarea
+        onChange={(event) => setText(event.target.value)}
+        value={text}
+      />
       <div dangerouslySetInnerHTML={{ __html: marked(text) }} />
     </Fragment>
   )

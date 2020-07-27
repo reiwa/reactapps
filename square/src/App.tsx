@@ -27,7 +27,7 @@ const App: FunctionComponent = () => {
       <tbody>
         {createSquares().map((numbers, i) => (
           <tr key={i}>
-            {numbers.map(j => (
+            {numbers.map((j) => (
               <td
                 key={j}
                 style={{ background: y === i && x === j ? 'gray' : 'white' }}

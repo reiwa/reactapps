@@ -5,7 +5,7 @@ const App: FunctionComponent = () => {
 
   return (
     <Fragment>
-      <input onChange={event => setText(event.target.value)} value={text} />
+      <input onChange={(event) => setText(event.target.value)} value={text} />
       <p>{toKatakana(text)}</p>
     </Fragment>
   )
@@ -13,7 +13,7 @@ const App: FunctionComponent = () => {
 
 const toKatakana = (string: string) => {
   return string
-    .replace(/[ぁ-ゔ]/g, s => String.fromCharCode(s.charCodeAt(0) + 0x60))
+    .replace(/[ぁ-ゔ]/g, (s) => String.fromCharCode(s.charCodeAt(0) + 0x60))
     .replace(/ﾞ/g, '゛')
     .replace(/ﾟ/g, '゜')
     .replace(/(ウ゛)/g, 'ヴ')
@@ -27,7 +27,7 @@ const toKatakana = (string: string) => {
     .replace(/ゕ/g, 'ヵ')
     .replace(/ゖ/g, 'ヶ')
     .split('')
-    .map(key => katakana.get(key) || key)
+    .map((key) => katakana.get(key) || key)
     .join('')
 }
 
