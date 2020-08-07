@@ -7,18 +7,23 @@ interface Todo {
 
 const App: FunctionComponent = () => {
   const [isAll, setIsAll] = useState(true)
+
   const [items, setItems] = useState<Todo[]>([])
+
   const [text, setText] = useState('')
+
   const onAdd = () => {
     setItems([...items, { text, isClosed: false }])
     setText('')
   }
+
   const onClose = (text: string) => () => {
     const index = items.findIndex((item) => item.text === text)
     const _items = [...items]
     _items[index].isClosed = !_items[index].isClosed
     setItems(_items)
   }
+
   const onDelete = (text: string) => () => {
     const index = items.findIndex((item) => item.text === text)
     const _items = [...items]
